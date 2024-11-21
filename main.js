@@ -112,3 +112,5 @@ async function pruebaDivs() {
     document.body.appendChild(div);
   });
 }
+
+pruebaDivs();

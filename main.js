@@ -107,7 +107,7 @@ async function crearDivs() {
 
   // Añadir todo al contenedor principal
   divContainer.appendChild(divBlock);
-  document.body.appendChild(h1);
+  divContainer.appendChild(h1);
   document.body.appendChild(divContainer);
 }
 

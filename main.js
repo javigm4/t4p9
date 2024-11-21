@@ -97,10 +97,17 @@ async function crearDivs() {
     pTypeYear.textContent = `${car.getType()} / ${car.getYear()}`;
     div.appendChild(pModeloMake);
     div.appendChild(pTypeYear);
+    div.classList.add("filters");
 
     divBlock.appendChild(div);
     divContainer.appendChild(divBlock);
 
+    //creo el h1, que se me olvido
+
+    const h1 = document.createElement("h1");
+    h1.textContent = "Coches desde 2010";
+
+    document.body.appendChild(h1);
     return div;
   }); //acaba el bucle
   return divsCar;

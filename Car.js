@@ -1,4 +1,4 @@
-export class Car {
+  export class Car {
   #id;
   make;
   model;

@@ -95,8 +95,8 @@ async function crearDivs() {
     const div = document.createElement("div");
     const pModeloMake = document.createElement("p");
     const pTypeYear = document.createElement("p");
-    pModeloMake.textContent = "${car.getModel()} / ${car.getMake()}";
-    pTypeYear.textContent = "${car.getType()} / ${car.getYear()}";
+    pModeloMake.textContent = '${car.getModel()} / ${car.getMake()}';
+    pTypeYear.textContent = '{car.getType()} / ${car.getYear()}';
     div.appendChild(pModeloMake);
     div.appendChild(pTypeYear);
 

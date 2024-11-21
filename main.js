@@ -83,7 +83,6 @@ async function crearDivs() {
   const cochesFiltrados = await filtroCoches();
   document.body.appendChild(document.createElement("div")).textContent =
     "Prueba de DOM cargado";
-  console.log("funciona");
 
   const divsCar = cochesFiltrados.map((car) => {
     //para ver si funciona

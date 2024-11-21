@@ -82,33 +82,33 @@ filtrarCoches();
 async function crearDivs() {
   const cochesFiltrados = await filtroCoches();
 
-  //creo el h1, que se me olvido
-
+  // Crear h1 y contenedor principal
   const h1 = document.createElement("h1");
   h1.textContent = "Coches desde 2010";
-  const divsCar = cochesFiltrados.map((car) => {
-    const divContainer = document.createElement("div");
-    divContainer.classList.add("container");
+  const divContainer = document.createElement("div");
+  divContainer.classList.add("container");
 
-    const divBlock = document.createElement("div");
-    divBlock.classList.add("block");
+  // Crear bloques de coches
+  const divBlock = document.createElement("div");
+  divBlock.classList.add("block");
 
+  cochesFiltrados.forEach((car) => {
     const div = document.createElement("div");
 
     const pModeloMake = document.createElement("p");
     const pTypeYear = document.createElement("p");
     pModeloMake.textContent = `${car.getModel()} / ${car.getMake()}`;
     pTypeYear.textContent = `${car.getType()} / ${car.getYear()}`;
+
     div.appendChild(pModeloMake);
     div.appendChild(pTypeYear);
-
     divBlock.appendChild(div);
-    divContainer.appendChild(divBlock);
+  });
 
-    document.body.appendChild(h1);
-    return div;
-  }); //acaba el bucle
-  return divsCar;
+  // Añadir todo al contenedor principal
+  divContainer.appendChild(divBlock);
+  document.body.appendChild(h1);
+  document.body.appendChild(divContainer);
 }
 
 async function pruebaDivs() {

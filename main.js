@@ -81,18 +81,16 @@ filtrarCoches();
 //--------TERCERA PROMESA -> DIVS ------------------
 async function crearDivs() {
   const cochesFiltrados = await filtroCoches();
-  document.body.appendChild(document.createElement("div")).textContent =
-    "Prueba de DOM cargado";
 
   const divsCar = cochesFiltrados.map((car) => {
-    //para ver si funciona
-    /*    console.log(car.getMake());
-      console.log(car.getModel());
-      console.log(car.getType());
-      console.log(car.getYear());  SI FUNCIONA, COMPLETAR EN CLASE*/
+    const divContainer = document.createElement("div");
+    divContainer.classList.add("container");
 
-    console.log("-----");
+    const divBlock = document.createElement("div");
+    divBlock.classList.add("block");
+
     const div = document.createElement("div");
+
     const pModeloMake = document.createElement("p");
     const pTypeYear = document.createElement("p");
     pModeloMake.textContent = `${car.getModel()} / ${car.getMake()}`;
@@ -100,9 +98,11 @@ async function crearDivs() {
     div.appendChild(pModeloMake);
     div.appendChild(pTypeYear);
 
+    divBlock.appendChild(div);
+    divContainer.appendChild(divBlock);
+
     return div;
-  });
-  console.log(divsCar);
+  }); //acaba el bucle
   return divsCar;
 }
 

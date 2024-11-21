@@ -101,7 +101,6 @@ async function crearDivs() {
     pTypeYear.textContent = `${car.getType()} / ${car.getYear()}`;
     div.appendChild(pModeloMake);
     div.appendChild(pTypeYear);
-    div.classList.add("filters");
 
     divBlock.appendChild(div);
     divContainer.appendChild(divBlock);

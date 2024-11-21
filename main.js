@@ -82,6 +82,10 @@ filtrarCoches();
 async function crearDivs() {
   const cochesFiltrados = await filtroCoches();
 
+  //creo el h1, que se me olvido
+
+  const h1 = document.createElement("h1");
+  h1.textContent = "Coches desde 2010";
   const divsCar = cochesFiltrados.map((car) => {
     const divContainer = document.createElement("div");
     divContainer.classList.add("container");
@@ -101,11 +105,6 @@ async function crearDivs() {
 
     divBlock.appendChild(div);
     divContainer.appendChild(divBlock);
-
-    //creo el h1, que se me olvido
-
-    const h1 = document.createElement("h1");
-    h1.textContent = "Coches desde 2010";
 
     document.body.appendChild(h1);
     return div;
